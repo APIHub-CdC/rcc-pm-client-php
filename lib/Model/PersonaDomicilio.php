@@ -187,8 +187,8 @@ class PersonaDomicilio implements ModelInterface, ArrayAccess
     
     public function setDireccion($direccion)
     {
-        if ((mb_strlen($direccion) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $direccion when calling PersonaDomicilio., must be smaller than or equal to 40.');
+        if ((mb_strlen($direccion) > 85)) {
+            throw new \InvalidArgumentException('invalid length for $direccion when calling PersonaDomicilio., must be smaller than or equal to 85.');
         }
         if ((mb_strlen($direccion) < 2)) {
             throw new \InvalidArgumentException('invalid length for $direccion when calling PersonaDomicilio., must be bigger than or equal to 2.');
