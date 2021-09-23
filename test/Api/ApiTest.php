@@ -56,7 +56,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $domicilio->setColoniaPoblacion("GUERRERO");
         $domicilio->setDelegacionMunicipio("CUAUHTEMOC");
         $domicilio->setCiudad("CIUDAD DE MÉXICO");
-        $domicilio->setEstado($catalogoEstados::DF);
+        $domicilio->setEstado($catalogoEstados::CDMX);
         $domicilio->setCP("68370");
         $domicilio->setPais($catalogoPais::MX);
 

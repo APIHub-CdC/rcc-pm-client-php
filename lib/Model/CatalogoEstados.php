@@ -38,6 +38,8 @@ class CatalogoEstados
     const YUC = 'YUC';
     const MICH = 'MICH';
     const ZAC = 'ZAC';
+    const CDMX = 'CDMX';
+    const TLA = 'TLA';
     
     
     public static function getAllowableEnumValues()
@@ -75,6 +77,8 @@ class CatalogoEstados
             self::YUC,
             self::MICH,
             self::ZAC,
+            self::TLA,
+            self::CDMX
         ];
     }
 }
