@@ -12,9 +12,9 @@ class ClavesBanxico implements ModelInterface, ArrayAccess
     protected static $RCCPMModelName = 'ClavesBanxico';
     
     protected static $RCCPMTypes = [
-        'clave_banxico1' => '\RCCPM\MX\Client\Model\CatalogoClavesBanxico',
-        'clave_banxico2' => '\RCCPM\MX\Client\Model\CatalogoClavesBanxico',
-        'clave_banxico3' => '\RCCPM\MX\Client\Model\CatalogoClavesBanxico'
+        'clave_banxico1' => 'string',
+        'clave_banxico2' => 'string',
+        'clave_banxico3' => 'string'
     ];
     
     protected static $RCCPMFormats = [
