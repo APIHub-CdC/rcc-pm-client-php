@@ -12,11 +12,13 @@ class Consultas implements ModelInterface, ArrayAccess
     protected static $RCCPMModelName = 'Consultas';
     
     protected static $RCCPMTypes = [
-        
+        'fecha_consulta' => 'string',
+        'nombre_otorgante' => 'string',
     ];
     
     protected static $RCCPMFormats = [
-        
+        'fecha_consulta' => 'yyyy-MM-dd',
+        'nombre_otorgante' => null,
     ];
     
     public static function RCCPMTypes()
@@ -30,15 +32,18 @@ class Consultas implements ModelInterface, ArrayAccess
     }
     
     protected static $attributeMap = [
-        
+        'fecha_consulta' => 'fechaConsulta',
+        'nombre_otorgante' => 'nombreOtorgante',
     ];
     
     protected static $setters = [
-        
+        'fecha_consulta' => 'setFechaConsulta',
+        'nombre_otorgante' => 'setNombreOtorgante'
     ];
     
     protected static $getters = [
-        
+        'fecha_consulta' => 'getFechaConsulta',
+        'nombre_otorgante' => 'getNombreOtorgante'
     ];
     
     public static function attributeMap()
@@ -67,17 +72,41 @@ class Consultas implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
+        $this->container['fecha_consulta'] = isset($data['fecha_consulta']) ? $data['fecha_consulta'] : null;
+        $this->container['nombre_otorgante'] = isset($data['nombre_otorgante']) ? $data['nombre_otorgante'] : null;
     }
     
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];//parent::listInvalidProperties();
         return $invalidProperties;
     }
     
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
+    }
+
+    public function getFechaConsulta()
+    {
+        return $this->container['fecha_consulta'];
+    }
+    
+    public function setFechaConsulta($fecha_consulta)
+    {
+        $this->container['fecha_consulta'] = $fecha_consulta;
+        return $this;
+    }
+
+    public function getNombreOtorgante()
+    {
+        return $this->container['nombre_otorgante'];
+    }
+    
+    public function setNombreOtorgante($nombre_otorgante)
+    {
+        $this->container['nombre_otorgante'] = $nombre_otorgante;
+        return $this;
     }
     
     public function offsetExists($offset)
