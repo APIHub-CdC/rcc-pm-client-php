@@ -14,7 +14,7 @@ class CuentasComercialesRespuesta implements ModelInterface, ArrayAccess
     protected static $RCCPMTypes = [
         'rfc' => 'string',
         'nombre_otorgante' => 'string',
-        'moneda' => '\RCCPM\MX\Client\Model\CatalogoTipoMoneda',
+        'moneda' => 'string',
         'vigente' => 'float',
         'saldo_total' => 'float',
         '_29dias' => 'float',

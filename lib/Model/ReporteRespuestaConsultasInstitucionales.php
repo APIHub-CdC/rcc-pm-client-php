@@ -14,7 +14,7 @@ class ReporteRespuestaConsultasInstitucionales implements ModelInterface, ArrayA
     protected static $RCCPMTypes = [
         'comerciales' => '\RCCPM\MX\Client\Model\ConsultasComerciales',
         'financieras' => '\RCCPM\MX\Client\Model\ConsultasFinancieras',
-        'consultas' => '\RCCPM\MX\Client\Model\Consultas'
+        'consultas' => '\RCCPM\MX\Client\Model\Consultas[]'
     ];
     
     protected static $RCCPMFormats = [
