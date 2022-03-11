@@ -16,9 +16,9 @@ class PersonaAvalesDomicilio implements ModelInterface, ArrayAccess
         'colonia_poblacion' => 'string',
         'delegacion_municipio' => 'string',
         'ciudad' => 'string',
-        'estado' => '\RCCPM\MX\Client\Model\CatalogoEstados',
+        'estado' => 'string',
         'cp' => 'string',
-        'pais' => '\RCCPM\MX\Client\Model\CatalogoPais',
+        'pais' => 'string',
         'telefono' => 'string',
         'extension' => 'string',
         'fax' => 'string'

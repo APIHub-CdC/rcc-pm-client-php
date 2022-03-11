@@ -18,7 +18,7 @@ class PersonaAccionistasDomicilio implements ModelInterface, ArrayAccess
         'ciudad' => 'string',
         'estado' => 'string',
         'cp' => 'string',
-        'pais' => '\RCCPM\MX\Client\Model\CatalogoPais',
+        'pais' => 'string',
         'telefono' => 'string',
         'extension' => 'string',
         'fax' => 'string'
