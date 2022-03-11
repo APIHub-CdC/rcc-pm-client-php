@@ -15,7 +15,7 @@ class ClavePrevencionesRespuesta implements ModelInterface, ArrayAccess
         'nombre_otorgante' => 'string',
         'fecha_reporte' => 'string',
         'numero_contrato' => 'string',
-        'clave_prevencion' => '\RCCPM\MX\Client\Model\CatalogoClavesPrevencion'
+        'clave_prevencion' => 'string'
     ];
     
     protected static $RCCPMFormats = [

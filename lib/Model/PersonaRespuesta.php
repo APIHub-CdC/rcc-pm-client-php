@@ -14,7 +14,7 @@ class PersonaRespuesta implements ModelInterface, ArrayAccess
     protected static $RCCPMTypes = [
         'rfc' => 'string',
         'nombre' => 'string',
-        'nacionalidad' => '\RCCPM\MX\Client\Model\CatalogoNacionalidad',
+        'nacionalidad' => 'string',
         'domicilio' => '\RCCPM\MX\Client\Model\PersonaRespuestaDomicilio'
     ];
     

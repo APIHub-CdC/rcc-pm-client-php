@@ -12,7 +12,7 @@ class CalificacionCarteraRespuesta implements ModelInterface, ArrayAccess
     protected static $RCCPMModelName = 'CalificacionCarteraRespuesta';
     
     protected static $RCCPMTypes = [
-        'calificacion' => '\RCCPM\MX\Client\Model\CatalogoCalificacionCartera',
+        'calificacion' => 'string',
         'nombre_otorgante' => 'string'
     ];
     

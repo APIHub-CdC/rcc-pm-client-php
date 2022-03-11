@@ -14,7 +14,7 @@ class ReporteRespuesta implements ModelInterface, ArrayAccess
     protected static $RCCPMTypes = [
         'folio_consulta' => 'string',
         'folio_otorgante' => 'string',
-        'clave_retorno' => '\RCCPM\MX\Client\Model\CatalogoClaveRetorno',
+        'clave_retorno' => 'string',
         'fecha_consulta' => 'string',
         'persona' => '\RCCPM\MX\Client\Model\PersonaRespuesta',
         'claves_banxico' => '\RCCPM\MX\Client\Model\ClavesBanxico',
