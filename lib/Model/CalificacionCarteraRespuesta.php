@@ -72,19 +72,12 @@ class CalificacionCarteraRespuesta implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['calificacion'] = isset($data['calificacion']) ? $data['calificacion'] : null;
-        $this->container['nombre_otorgante'] = isset($data['nombre_otorgante']) ? $data['nombre_otorgante'] : null;
+        
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['nombre_otorgante']) && (mb_strlen($this->container['nombre_otorgante']) > 99)) {
-            $invalidProperties[] = "invalid value for 'nombre_otorgante', the character length must be smaller than or equal to 99.";
-        }
-        if (!is_null($this->container['nombre_otorgante']) && (mb_strlen($this->container['nombre_otorgante']) < 2)) {
-            $invalidProperties[] = "invalid value for 'nombre_otorgante', the character length must be bigger than or equal to 2.";
-        }
         return $invalidProperties;
     }
     
@@ -111,12 +104,6 @@ class CalificacionCarteraRespuesta implements ModelInterface, ArrayAccess
     
     public function setNombreOtorgante($nombre_otorgante)
     {
-        if (!is_null($nombre_otorgante) && (mb_strlen($nombre_otorgante) > 99)) {
-            throw new \InvalidArgumentException('invalid length for $nombre_otorgante when calling CalificacionCarteraRespuesta., must be smaller than or equal to 99.');
-        }
-        if (!is_null($nombre_otorgante) && (mb_strlen($nombre_otorgante) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $nombre_otorgante when calling CalificacionCarteraRespuesta., must be bigger than or equal to 2.');
-        }
         $this->container['nombre_otorgante'] = $nombre_otorgante;
         return $this;
     }

@@ -82,27 +82,12 @@ class PersonaRespuesta implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['rfc'] = isset($data['rfc']) ? $data['rfc'] : null;
-        $this->container['nombre'] = isset($data['nombre']) ? $data['nombre'] : null;
-        $this->container['nacionalidad'] = isset($data['nacionalidad']) ? $data['nacionalidad'] : null;
-        $this->container['domicilio'] = isset($data['domicilio']) ? $data['domicilio'] : null;
+
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['rfc']) && (mb_strlen($this->container['rfc']) > 13)) {
-            $invalidProperties[] = "invalid value for 'rfc', the character length must be smaller than or equal to 13.";
-        }
-        if (!is_null($this->container['rfc']) && (mb_strlen($this->container['rfc']) < 10)) {
-            $invalidProperties[] = "invalid value for 'rfc', the character length must be bigger than or equal to 10.";
-        }
-        if (!is_null($this->container['nombre']) && (mb_strlen($this->container['nombre']) > 75)) {
-            $invalidProperties[] = "invalid value for 'nombre', the character length must be smaller than or equal to 75.";
-        }
-        if (!is_null($this->container['nombre']) && (mb_strlen($this->container['nombre']) < 2)) {
-            $invalidProperties[] = "invalid value for 'nombre', the character length must be bigger than or equal to 2.";
-        }
         return $invalidProperties;
     }
     
@@ -118,12 +103,6 @@ class PersonaRespuesta implements ModelInterface, ArrayAccess
     
     public function setRfc($rfc)
     {
-        if (!is_null($rfc) && (mb_strlen($rfc) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $rfc when calling PersonaRespuesta., must be smaller than or equal to 13.');
-        }
-        if (!is_null($rfc) && (mb_strlen($rfc) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $rfc when calling PersonaRespuesta., must be bigger than or equal to 10.');
-        }
         $this->container['rfc'] = $rfc;
         return $this;
     }
@@ -135,12 +114,6 @@ class PersonaRespuesta implements ModelInterface, ArrayAccess
     
     public function setNombre($nombre)
     {
-        if (!is_null($nombre) && (mb_strlen($nombre) > 75)) {
-            throw new \InvalidArgumentException('invalid length for $nombre when calling PersonaRespuesta., must be smaller than or equal to 75.');
-        }
-        if (!is_null($nombre) && (mb_strlen($nombre) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $nombre when calling PersonaRespuesta., must be bigger than or equal to 2.');
-        }
         $this->container['nombre'] = $nombre;
         return $this;
     }

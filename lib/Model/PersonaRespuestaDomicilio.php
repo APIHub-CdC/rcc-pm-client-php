@@ -112,69 +112,12 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['direccion'] = isset($data['direccion']) ? $data['direccion'] : null;
-        $this->container['colonia_poblacion'] = isset($data['colonia_poblacion']) ? $data['colonia_poblacion'] : null;
-        $this->container['delegacion_municipio'] = isset($data['delegacion_municipio']) ? $data['delegacion_municipio'] : null;
-        $this->container['ciudad'] = isset($data['ciudad']) ? $data['ciudad'] : null;
-        $this->container['estado'] = isset($data['estado']) ? $data['estado'] : null;
-        $this->container['cp'] = isset($data['cp']) ? $data['cp'] : null;
-        $this->container['pais'] = isset($data['pais']) ? $data['pais'] : null;
-        $this->container['telefono'] = isset($data['telefono']) ? $data['telefono'] : null;
-        $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
-        $this->container['fax'] = isset($data['fax']) ? $data['fax'] : null;
+
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['direccion']) && (mb_strlen($this->container['direccion']) > 40)) {
-            $invalidProperties[] = "invalid value for 'direccion', the character length must be smaller than or equal to 40.";
-        }
-        if (!is_null($this->container['direccion']) && (mb_strlen($this->container['direccion']) < 2)) {
-            $invalidProperties[] = "invalid value for 'direccion', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['colonia_poblacion']) && (mb_strlen($this->container['colonia_poblacion']) > 60)) {
-            $invalidProperties[] = "invalid value for 'colonia_poblacion', the character length must be smaller than or equal to 60.";
-        }
-        if (!is_null($this->container['colonia_poblacion']) && (mb_strlen($this->container['colonia_poblacion']) < 2)) {
-            $invalidProperties[] = "invalid value for 'colonia_poblacion', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['delegacion_municipio']) && (mb_strlen($this->container['delegacion_municipio']) > 60)) {
-            $invalidProperties[] = "invalid value for 'delegacion_municipio', the character length must be smaller than or equal to 60.";
-        }
-        if (!is_null($this->container['delegacion_municipio']) && (mb_strlen($this->container['delegacion_municipio']) < 2)) {
-            $invalidProperties[] = "invalid value for 'delegacion_municipio', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['ciudad']) && (mb_strlen($this->container['ciudad']) > 40)) {
-            $invalidProperties[] = "invalid value for 'ciudad', the character length must be smaller than or equal to 40.";
-        }
-        if (!is_null($this->container['ciudad']) && (mb_strlen($this->container['ciudad']) < 2)) {
-            $invalidProperties[] = "invalid value for 'ciudad', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['cp']) && (mb_strlen($this->container['cp']) > 10)) {
-            $invalidProperties[] = "invalid value for 'cp', the character length must be smaller than or equal to 10.";
-        }
-        if (!is_null($this->container['cp']) && (mb_strlen($this->container['cp']) < 5)) {
-            $invalidProperties[] = "invalid value for 'cp', the character length must be bigger than or equal to 5.";
-        }
-        if (!is_null($this->container['telefono']) && (mb_strlen($this->container['telefono']) > 11)) {
-            $invalidProperties[] = "invalid value for 'telefono', the character length must be smaller than or equal to 11.";
-        }
-        if (!is_null($this->container['telefono']) && (mb_strlen($this->container['telefono']) < 2)) {
-            $invalidProperties[] = "invalid value for 'telefono', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['extension']) && (mb_strlen($this->container['extension']) > 8)) {
-            $invalidProperties[] = "invalid value for 'extension', the character length must be smaller than or equal to 8.";
-        }
-        if (!is_null($this->container['extension']) && (mb_strlen($this->container['extension']) < 2)) {
-            $invalidProperties[] = "invalid value for 'extension', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['fax']) && (mb_strlen($this->container['fax']) > 11)) {
-            $invalidProperties[] = "invalid value for 'fax', the character length must be smaller than or equal to 11.";
-        }
-        if (!is_null($this->container['fax']) && (mb_strlen($this->container['fax']) < 2)) {
-            $invalidProperties[] = "invalid value for 'fax', the character length must be bigger than or equal to 2.";
-        }
         return $invalidProperties;
     }
     
@@ -190,12 +133,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setDireccion($direccion)
     {
-        if (!is_null($direccion) && (mb_strlen($direccion) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $direccion when calling PersonaRespuestaDomicilio., must be smaller than or equal to 40.');
-        }
-        if (!is_null($direccion) && (mb_strlen($direccion) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $direccion when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['direccion'] = $direccion;
         return $this;
     }
@@ -207,12 +144,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setColoniaPoblacion($colonia_poblacion)
     {
-        if (!is_null($colonia_poblacion) && (mb_strlen($colonia_poblacion) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $colonia_poblacion when calling PersonaRespuestaDomicilio., must be smaller than or equal to 60.');
-        }
-        if (!is_null($colonia_poblacion) && (mb_strlen($colonia_poblacion) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $colonia_poblacion when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['colonia_poblacion'] = $colonia_poblacion;
         return $this;
     }
@@ -224,12 +155,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setDelegacionMunicipio($delegacion_municipio)
     {
-        if (!is_null($delegacion_municipio) && (mb_strlen($delegacion_municipio) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $delegacion_municipio when calling PersonaRespuestaDomicilio., must be smaller than or equal to 60.');
-        }
-        if (!is_null($delegacion_municipio) && (mb_strlen($delegacion_municipio) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $delegacion_municipio when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['delegacion_municipio'] = $delegacion_municipio;
         return $this;
     }
@@ -241,12 +166,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setCiudad($ciudad)
     {
-        if (!is_null($ciudad) && (mb_strlen($ciudad) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $ciudad when calling PersonaRespuestaDomicilio., must be smaller than or equal to 40.');
-        }
-        if (!is_null($ciudad) && (mb_strlen($ciudad) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $ciudad when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['ciudad'] = $ciudad;
         return $this;
     }
@@ -269,12 +188,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setCp($cp)
     {
-        if (!is_null($cp) && (mb_strlen($cp) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $cp when calling PersonaRespuestaDomicilio., must be smaller than or equal to 10.');
-        }
-        if (!is_null($cp) && (mb_strlen($cp) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $cp when calling PersonaRespuestaDomicilio., must be bigger than or equal to 5.');
-        }
         $this->container['cp'] = $cp;
         return $this;
     }
@@ -297,12 +210,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setTelefono($telefono)
     {
-        if (!is_null($telefono) && (mb_strlen($telefono) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $telefono when calling PersonaRespuestaDomicilio., must be smaller than or equal to 11.');
-        }
-        if (!is_null($telefono) && (mb_strlen($telefono) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $telefono when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['telefono'] = $telefono;
         return $this;
     }
@@ -314,12 +221,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setExtension($extension)
     {
-        if (!is_null($extension) && (mb_strlen($extension) > 8)) {
-            throw new \InvalidArgumentException('invalid length for $extension when calling PersonaRespuestaDomicilio., must be smaller than or equal to 8.');
-        }
-        if (!is_null($extension) && (mb_strlen($extension) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $extension when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['extension'] = $extension;
         return $this;
     }
@@ -331,12 +232,6 @@ class PersonaRespuestaDomicilio implements ModelInterface, ArrayAccess
     
     public function setFax($fax)
     {
-        if (!is_null($fax) && (mb_strlen($fax) > 11)) {
-            throw new \InvalidArgumentException('invalid length for $fax when calling PersonaRespuestaDomicilio., must be smaller than or equal to 11.');
-        }
-        if (!is_null($fax) && (mb_strlen($fax) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $fax when calling PersonaRespuestaDomicilio., must be bigger than or equal to 2.');
-        }
         $this->container['fax'] = $fax;
         return $this;
     }

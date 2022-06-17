@@ -24,7 +24,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $password = getenv('KEY_PASSWORD');
+        $password = "your_key_password";//$password = getenv('KEY_PASSWORD');
         $this->signer = new KeyHandler(null, null, $password);
 
         $events = new MiddlewareEvents($this->signer);
