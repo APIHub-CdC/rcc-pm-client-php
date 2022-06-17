@@ -72,22 +72,12 @@ class DeclarativasRespuesta implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['declarativa'] = isset($data['declarativa']) ? $data['declarativa'] : null;
-        $this->container['fecha_declarativa'] = isset($data['fecha_declarativa']) ? $data['fecha_declarativa'] : null;
+        
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['declarativa']) && (mb_strlen($this->container['declarativa']) > 99)) {
-            $invalidProperties[] = "invalid value for 'declarativa', the character length must be smaller than or equal to 99.";
-        }
-        if (!is_null($this->container['declarativa']) && (mb_strlen($this->container['declarativa']) < 1)) {
-            $invalidProperties[] = "invalid value for 'declarativa', the character length must be bigger than or equal to 1.";
-        }
-        if (!is_null($this->container['fecha_declarativa']) && (mb_strlen($this->container['fecha_declarativa']) > 10)) {
-            $invalidProperties[] = "invalid value for 'fecha_declarativa', the character length must be smaller than or equal to 10.";
-        }
         return $invalidProperties;
     }
     
@@ -103,12 +93,6 @@ class DeclarativasRespuesta implements ModelInterface, ArrayAccess
     
     public function setDeclarativa($declarativa)
     {
-        if (!is_null($declarativa) && (mb_strlen($declarativa) > 99)) {
-            throw new \InvalidArgumentException('invalid length for $declarativa when calling DeclarativasRespuesta., must be smaller than or equal to 99.');
-        }
-        if (!is_null($declarativa) && (mb_strlen($declarativa) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $declarativa when calling DeclarativasRespuesta., must be bigger than or equal to 1.');
-        }
         $this->container['declarativa'] = $declarativa;
         return $this;
     }
@@ -120,9 +104,6 @@ class DeclarativasRespuesta implements ModelInterface, ArrayAccess
     
     public function setFechaDeclarativa($fecha_declarativa)
     {
-        if (!is_null($fecha_declarativa) && (mb_strlen($fecha_declarativa) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $fecha_declarativa when calling DeclarativasRespuesta., must be smaller than or equal to 10.');
-        }
         $this->container['fecha_declarativa'] = $fecha_declarativa;
         return $this;
     }

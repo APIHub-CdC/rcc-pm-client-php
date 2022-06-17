@@ -82,24 +82,12 @@ class ClavePrevencionesRespuesta implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['nombre_otorgante'] = isset($data['nombre_otorgante']) ? $data['nombre_otorgante'] : null;
-        $this->container['fecha_reporte'] = isset($data['fecha_reporte']) ? $data['fecha_reporte'] : null;
-        $this->container['numero_contrato'] = isset($data['numero_contrato']) ? $data['numero_contrato'] : null;
-        $this->container['clave_prevencion'] = isset($data['clave_prevencion']) ? $data['clave_prevencion'] : null;
+
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['nombre_otorgante']) && (mb_strlen($this->container['nombre_otorgante']) > 99)) {
-            $invalidProperties[] = "invalid value for 'nombre_otorgante', the character length must be smaller than or equal to 99.";
-        }
-        if (!is_null($this->container['nombre_otorgante']) && (mb_strlen($this->container['nombre_otorgante']) < 2)) {
-            $invalidProperties[] = "invalid value for 'nombre_otorgante', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['fecha_reporte']) && (mb_strlen($this->container['fecha_reporte']) > 10)) {
-            $invalidProperties[] = "invalid value for 'fecha_reporte', the character length must be smaller than or equal to 10.";
-        }
         return $invalidProperties;
     }
     
@@ -115,12 +103,6 @@ class ClavePrevencionesRespuesta implements ModelInterface, ArrayAccess
     
     public function setNombreOtorgante($nombre_otorgante)
     {
-        if (!is_null($nombre_otorgante) && (mb_strlen($nombre_otorgante) > 99)) {
-            throw new \InvalidArgumentException('invalid length for $nombre_otorgante when calling ClavePrevencionesRespuesta., must be smaller than or equal to 99.');
-        }
-        if (!is_null($nombre_otorgante) && (mb_strlen($nombre_otorgante) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $nombre_otorgante when calling ClavePrevencionesRespuesta., must be bigger than or equal to 2.');
-        }
         $this->container['nombre_otorgante'] = $nombre_otorgante;
         return $this;
     }
@@ -132,9 +114,6 @@ class ClavePrevencionesRespuesta implements ModelInterface, ArrayAccess
     
     public function setFechaReporte($fecha_reporte)
     {
-        if (!is_null($fecha_reporte) && (mb_strlen($fecha_reporte) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $fecha_reporte when calling ClavePrevencionesRespuesta., must be smaller than or equal to 10.');
-        }
         $this->container['fecha_reporte'] = $fecha_reporte;
         return $this;
     }
