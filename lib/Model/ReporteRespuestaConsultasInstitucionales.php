@@ -77,9 +77,7 @@ class ReporteRespuestaConsultasInstitucionales implements ModelInterface, ArrayA
     
     public function __construct(array $data = null)
     {
-        $this->container['comerciales'] = isset($data['comerciales']) ? $data['comerciales'] : null;
-        $this->container['financieras'] = isset($data['financieras']) ? $data['financieras'] : null;
-        $this->container['consultas'] = isset($data['consultas']) ? $data['consultas'] : null;
+
     }
     
     public function listInvalidProperties()

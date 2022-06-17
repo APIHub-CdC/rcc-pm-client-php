@@ -72,8 +72,7 @@ class ReporteRespuestaCredito implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['cuentas_financieras'] = isset($data['cuentas_financieras']) ? $data['cuentas_financieras'] : null;
-        $this->container['cuentas_comerciales'] = isset($data['cuentas_comerciales']) ? $data['cuentas_comerciales'] : null;
+        
     }
     
     public function listInvalidProperties()

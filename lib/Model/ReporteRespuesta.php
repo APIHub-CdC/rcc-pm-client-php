@@ -127,39 +127,12 @@ class ReporteRespuesta implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['folio_consulta'] = isset($data['folio_consulta']) ? $data['folio_consulta'] : null;
-        $this->container['folio_otorgante'] = isset($data['folio_otorgante']) ? $data['folio_otorgante'] : null;
-        $this->container['clave_retorno'] = isset($data['clave_retorno']) ? $data['clave_retorno'] : null;
-        $this->container['fecha_consulta'] = isset($data['fecha_consulta']) ? $data['fecha_consulta'] : null;
-        $this->container['persona'] = isset($data['persona']) ? $data['persona'] : null;
-        $this->container['claves_banxico'] = isset($data['claves_banxico']) ? $data['claves_banxico'] : null;
-        $this->container['calificacion_cartera'] = isset($data['calificacion_cartera']) ? $data['calificacion_cartera'] : null;
-        $this->container['clave_prevenciones'] = isset($data['clave_prevenciones']) ? $data['clave_prevenciones'] : null;
-        $this->container['consultas_institucionales'] = isset($data['consultas_institucionales']) ? $data['consultas_institucionales'] : null;
-        $this->container['declarativas'] = isset($data['declarativas']) ? $data['declarativas'] : null;
-        $this->container['accionistas'] = isset($data['accionistas']) ? $data['accionistas'] : null;
-        $this->container['avales'] = isset($data['avales']) ? $data['avales'] : null;
-        $this->container['credito'] = isset($data['credito']) ? $data['credito'] : null;
+
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['folio_consulta']) && (mb_strlen($this->container['folio_consulta']) > 15)) {
-            $invalidProperties[] = "invalid value for 'folio_consulta', the character length must be smaller than or equal to 15.";
-        }
-        if (!is_null($this->container['folio_consulta']) && (mb_strlen($this->container['folio_consulta']) < 1)) {
-            $invalidProperties[] = "invalid value for 'folio_consulta', the character length must be bigger than or equal to 1.";
-        }
-        if (!is_null($this->container['folio_otorgante']) && (mb_strlen($this->container['folio_otorgante']) > 25)) {
-            $invalidProperties[] = "invalid value for 'folio_otorgante', the character length must be smaller than or equal to 25.";
-        }
-        if (!is_null($this->container['folio_otorgante']) && (mb_strlen($this->container['folio_otorgante']) < 1)) {
-            $invalidProperties[] = "invalid value for 'folio_otorgante', the character length must be bigger than or equal to 1.";
-        }
-        if (!is_null($this->container['fecha_consulta']) && (mb_strlen($this->container['fecha_consulta']) > 10)) {
-            $invalidProperties[] = "invalid value for 'fecha_consulta', the character length must be smaller than or equal to 10.";
-        }
         return $invalidProperties;
     }
     
@@ -175,12 +148,6 @@ class ReporteRespuesta implements ModelInterface, ArrayAccess
     
     public function setFolioConsulta($folio_consulta)
     {
-        if (!is_null($folio_consulta) && (mb_strlen($folio_consulta) > 15)) {
-            throw new \InvalidArgumentException('invalid length for $folio_consulta when calling ReporteRespuesta., must be smaller than or equal to 15.');
-        }
-        if (!is_null($folio_consulta) && (mb_strlen($folio_consulta) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $folio_consulta when calling ReporteRespuesta., must be bigger than or equal to 1.');
-        }
         $this->container['folio_consulta'] = $folio_consulta;
         return $this;
     }
@@ -192,12 +159,6 @@ class ReporteRespuesta implements ModelInterface, ArrayAccess
     
     public function setFolioOtorgante($folio_otorgante)
     {
-        if (!is_null($folio_otorgante) && (mb_strlen($folio_otorgante) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $folio_otorgante when calling ReporteRespuesta., must be smaller than or equal to 25.');
-        }
-        if (!is_null($folio_otorgante) && (mb_strlen($folio_otorgante) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $folio_otorgante when calling ReporteRespuesta., must be bigger than or equal to 1.');
-        }
         $this->container['folio_otorgante'] = $folio_otorgante;
         return $this;
     }
@@ -220,9 +181,6 @@ class ReporteRespuesta implements ModelInterface, ArrayAccess
     
     public function setFechaConsulta($fecha_consulta)
     {
-        if (!is_null($fecha_consulta) && (mb_strlen($fecha_consulta) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $fecha_consulta when calling ReporteRespuesta., must be smaller than or equal to 10.');
-        }
         $this->container['fecha_consulta'] = $fecha_consulta;
         return $this;
     }

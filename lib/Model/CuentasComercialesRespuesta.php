@@ -132,40 +132,12 @@ class CuentasComercialesRespuesta implements ModelInterface, ArrayAccess
     
     public function __construct(array $data = null)
     {
-        $this->container['rfc'] = isset($data['rfc']) ? $data['rfc'] : null;
-        $this->container['nombre_otorgante'] = isset($data['nombre_otorgante']) ? $data['nombre_otorgante'] : null;
-        $this->container['moneda'] = isset($data['moneda']) ? $data['moneda'] : null;
-        $this->container['vigente'] = isset($data['vigente']) ? $data['vigente'] : null;
-        $this->container['saldo_total'] = isset($data['saldo_total']) ? $data['saldo_total'] : null;
-        $this->container['_29dias'] = isset($data['_29dias']) ? $data['_29dias'] : null;
-        $this->container['_59dias'] = isset($data['_59dias']) ? $data['_59dias'] : null;
-        $this->container['_89dias'] = isset($data['_89dias']) ? $data['_89dias'] : null;
-        $this->container['_119dias'] = isset($data['_119dias']) ? $data['_119dias'] : null;
-        $this->container['_179dias'] = isset($data['_179dias']) ? $data['_179dias'] : null;
-        $this->container['_180_mas_dias'] = isset($data['_180_mas_dias']) ? $data['_180_mas_dias'] : null;
-        $this->container['actualizacion'] = isset($data['actualizacion']) ? $data['actualizacion'] : null;
-        $this->container['historia'] = isset($data['historia']) ? $data['historia'] : null;
-        $this->container['atraso_mayor'] = isset($data['atraso_mayor']) ? $data['atraso_mayor'] : null;
+
     }
     
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-        if (!is_null($this->container['rfc']) && (mb_strlen($this->container['rfc']) > 13)) {
-            $invalidProperties[] = "invalid value for 'rfc', the character length must be smaller than or equal to 13.";
-        }
-        if (!is_null($this->container['rfc']) && (mb_strlen($this->container['rfc']) < 10)) {
-            $invalidProperties[] = "invalid value for 'rfc', the character length must be bigger than or equal to 10.";
-        }
-        if (!is_null($this->container['nombre_otorgante']) && (mb_strlen($this->container['nombre_otorgante']) > 99)) {
-            $invalidProperties[] = "invalid value for 'nombre_otorgante', the character length must be smaller than or equal to 99.";
-        }
-        if (!is_null($this->container['nombre_otorgante']) && (mb_strlen($this->container['nombre_otorgante']) < 2)) {
-            $invalidProperties[] = "invalid value for 'nombre_otorgante', the character length must be bigger than or equal to 2.";
-        }
-        if (!is_null($this->container['actualizacion']) && (mb_strlen($this->container['actualizacion']) > 10)) {
-            $invalidProperties[] = "invalid value for 'actualizacion', the character length must be smaller than or equal to 10.";
-        }
         return $invalidProperties;
     }
     
@@ -181,12 +153,6 @@ class CuentasComercialesRespuesta implements ModelInterface, ArrayAccess
     
     public function setRfc($rfc)
     {
-        if (!is_null($rfc) && (mb_strlen($rfc) > 13)) {
-            throw new \InvalidArgumentException('invalid length for $rfc when calling CuentasComercialesRespuesta., must be smaller than or equal to 13.');
-        }
-        if (!is_null($rfc) && (mb_strlen($rfc) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $rfc when calling CuentasComercialesRespuesta., must be bigger than or equal to 10.');
-        }
         $this->container['rfc'] = $rfc;
         return $this;
     }
@@ -198,12 +164,6 @@ class CuentasComercialesRespuesta implements ModelInterface, ArrayAccess
     
     public function setNombreOtorgante($nombre_otorgante)
     {
-        if (!is_null($nombre_otorgante) && (mb_strlen($nombre_otorgante) > 99)) {
-            throw new \InvalidArgumentException('invalid length for $nombre_otorgante when calling CuentasComercialesRespuesta., must be smaller than or equal to 99.');
-        }
-        if (!is_null($nombre_otorgante) && (mb_strlen($nombre_otorgante) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $nombre_otorgante when calling CuentasComercialesRespuesta., must be bigger than or equal to 2.');
-        }
         $this->container['nombre_otorgante'] = $nombre_otorgante;
         return $this;
     }
@@ -314,9 +274,6 @@ class CuentasComercialesRespuesta implements ModelInterface, ArrayAccess
     
     public function setActualizacion($actualizacion)
     {
-        if (!is_null($actualizacion) && (mb_strlen($actualizacion) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $actualizacion when calling CuentasComercialesRespuesta., must be smaller than or equal to 10.');
-        }
         $this->container['actualizacion'] = $actualizacion;
         return $this;
     }
